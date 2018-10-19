@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Projects
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let project of projectList" (click)="openPublished(project.availabilityLink)">
+      <h2>{{ project.name }}</h2>
+      <h4 *ngIf="project.platform">Platform: {{ project.platform }}</h4>
+      <h4 *ngIf="project.availability">Availability: {{ project.availability }}</h4>
+      <h4 *ngIf="project.link">Source: {{ project.source }}</h4>
+      <p>{{ project.description }}</p>
+    </button>
+  </ion-list>
+</ion-content>
